@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>React App</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const data = [
+        {
+          name: "C++",
+          duration: 1.5,
+          description:
+            "C++ programs are directly compiled into machine-executable codes which consumes less time to execute the code. Hence, it is widely used in competitive programming where you are expected to optimise time and memory. So, if you are interested to explore competitive programming then it is good to start with C++ language",
+          price: 3000,
+          discount: 10,
+        },
+        {
+          name: "Java",
+          duration: 1.5,
+          description:
+            "Java programs are easy to understand, structured and less prone to errors. Also, they are platform independent and portable which makes it a good choice for mobile, web and desktop applications. So, if you are looking for a career in software development then it is good to start with the Java language",
+          price: 2970,
+          discount: 10,
+        },
+        {
+          name: "Python",
+          duration: 1.5,
+          description:
+            "Python programs are simple in syntax with extensive library support which helps the programmers to come up with required logic with few lines of code. It is popular and widely used in the data domains like data science, Machine learning, deep learning etc.., So, if you are looking for a career in the field of Artificial Intelligence then it is good to start with the Python language",
+          price: 2500,
+          discount: 10,
+        },
+      ];
+
+      const totalPrice = (price, discount) => price - (price * discount) / 100;
+
+      const Heading = () => <h1> Coding Ninjas. </h1>;
+      const Description = () => (
+        <>
+          <p>
+            Coding Ninjas was founded in 2016 to bridge the knowledge gap
+            between colleges and industry. Founded by Ankush Singla, Kannu
+            Mittal and Dhawal Parate, Coding Ninjas boasts of world-class
+            teaching faculty and a state-of-art learning platform for Coding
+            education with faculty alumni of IIT, Stanford, IIIT and Facebook.
+            Coding Ninjas teaches 17+ Programming courses in Foundation,l
+            Advanced, Data & Development courses such as Machine Learning, Data
+            Science, Web Development, Android and more. Today, Coding Ninjas
+            ecosystem comprises of 40,000+ students and alumni, 1000+ Campus
+            Ambassadors, 2000+ Teaching Assistants, and 150+ employees.
+          </p>
+          <p>
+            Coding Ninjas is a Learning Platform. It provides many new emerging
+            technologies course. Students can enroll and learn many new courses
+            according to their interest via Coding Ninjas. Few courses of coding
+            ninjas are given below.
+          </p>
+        </>
+      );
+
+      const CourseList = () => (
+        <ul>
+          <li>
+            <h3> {data[0].name} </h3>
+            <p> {data[0].description} </p>
+            <p>
+              <span>
+                <b>Course duration: </b> {data[0].duration} Months,
+              </span>
+              &emsp;
+              <span>
+                <b>Course price:</b> Rs. {data[0].price}
+              </span>
+              &emsp;
+              <span>
+                <b>Discount: </b> {data[0].discount}%
+              </span>
+              &emsp;
+              <span>
+                <b>Total price to pay:</b> Rs.{" "}
+                {totalPrice(data[0].price, data[0].discount)}
+              </span>
+            </p>
+          </li>
+          <li>
+            <h3> {data[1].name} </h3>
+            <p> {data[1].description} </p>
+            <p>
+              <span>
+                <b>Course duration: </b> {data[1].duration} Months,
+              </span>
+              &emsp;
+              <span>
+                <b>Course price:</b> Rs. {data[1].price}
+              </span>
+              &emsp;
+              <span>
+                <b>Discount: </b> {data[1].discount}%
+              </span>
+              &emsp;
+              <span>
+                <b>Total price to pay:</b> Rs.{" "}
+                {totalPrice(data[1].price, data[1].discount)}
+              </span>
+            </p>
+          </li>
+          <li>
+            <h3> {data[2].name} </h3>
+            <p> {data[2].description} </p>
+            <p>
+              <span>
+                <b>Course duration: </b> {data[2].duration} Months,
+              </span>
+              &emsp;
+              <span>
+                <b>Course price:</b> Rs. {data[2].price}
+              </span>
+              &emsp;
+              <span>
+                <b>Discount: </b> {data[2].discount}%
+              </span>
+              &emsp;
+              <span>
+                <b>Total price to pay:</b> Rs.{" "}
+                {totalPrice(data[2].price, data[2].discount)}
+              </span>
+            </p>
+          </li>
+        </ul>
+      );
+
+      const App = () => (
+        <>
+          <Heading />
+          <Description />
+          <CourseList />
+        </>
+      );
+
+      const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+      rootElement.render(<App />);
+    </script>
+  </body>
+</html>
